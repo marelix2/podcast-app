@@ -1,0 +1,15 @@
+<div class="container" formGroup="searchForm">
+  <mat-icon svgIcon="search"></mat-icon>
+
+  <mat-form-field>
+    <input  type="text" matInput formControlName='search' placeholder="search" [matAutocomplete]="auto">
+  </mat-form-field>
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let n of podcasts" [value]="n.name">
+      {{ n?.name }}
+    </mat-option>
+  </mat-autocomplete>
+
+
+</div>

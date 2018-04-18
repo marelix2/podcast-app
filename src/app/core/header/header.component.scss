@@ -1,0 +1,15 @@
+.container{
+  padding-left: 10px;
+  position: fixed;
+  z-index: 1;
+  width: 88%;
+  height: 10%;
+  top: 0px;
+  left: 12%;
+  color: rgb(255,255,255);
+  background: linear-gradient(to bottom, rgb(87,63,82) , rgb(140,63,82));
+}
+
+mat-form-field{
+  color: #fff;
+}

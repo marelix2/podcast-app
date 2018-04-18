@@ -1,0 +1,3 @@
+interface SampleNames {
+  name: string;
+}
