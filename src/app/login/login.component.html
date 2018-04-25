@@ -1,0 +1,16 @@
+<div class="container" [formGroup]="loginData">
+
+
+  <mat-form-field>
+    <input  type="text" matInput formControlName='email' placeholder="email">
+
+  </mat-form-field>
+  <mat-form-field>
+    <input  type="password" matInput formControlName='password' placeholder="password">
+  </mat-form-field>
+
+  <div class="buttons">
+  <button mat-raised-button color="primary" (click)="login()" [routerLink]="['/app']" > Sing In</button>
+  <button mat-raised-button color="primary" [routerLink]="['/register']"> Sing Up</button>
+  </div>
+</div>
