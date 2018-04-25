@@ -1,3 +1,18 @@
-<p class="footer">
-  music-panel works!
-</p>
+<div class="footer">
+<div  fxLayout.xs="column">
+
+  <div fxLayout="row" fxFlex="10" fxLayoutAlign="start">
+    <app-active-podcast></app-active-podcast>
+  </div>
+
+  <div fxLayout="column" fxFlex="70" fxLayoutAlign="center">
+    <app-panel-buttons></app-panel-buttons>
+    <app-progress-bar></app-progress-bar>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center" fxFlex >
+    <app-volume-bar></app-volume-bar>
+  </div>
+
+</div>
+</div>
