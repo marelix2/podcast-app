@@ -8,6 +8,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule, MatDividerModule, MatFormFieldModule, MatIconModule, MatInputModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatMenuModule} from '@angular/material/menu';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    FlexLayoutModule
 
 
   ],

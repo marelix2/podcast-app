@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {SearchService} from "../../services/search.service";
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from "@angular/platform-browser";
+import {LoginService} from "../../services/login.service";
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit {
   podcasts: SampleNames[];
 
   constructor(private formBuilder: FormBuilder,
-              private searchService: SearchService) {
+              private searchService: SearchService,
+              private loginService: LoginService) {
   }
 
   ngOnInit() {
@@ -34,6 +36,11 @@ export class HeaderComponent implements OnInit {
     this.searchService.loadPodcasts().subscribe(w => {
       this.podcasts = w;
     });
+  }
+
+
+  logout(){
+    this.loginService.logout();
   }
 
 }

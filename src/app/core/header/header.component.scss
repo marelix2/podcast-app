@@ -10,18 +10,9 @@
   background: linear-gradient(to bottom, rgb(87,63,82) , rgb(140,63,82));
 }
 
-.flex-container{
+.flex-container > mat-icon{
 
-  display: flex;
-
-  align-items: baseline;
-  flex-wrap: wrap;
-  align-content: space-between;
-
-}
-
-.flex-container > *{
-
+  margin-top: 1.2%;
 
 }
 
@@ -30,4 +21,8 @@ mat-form-field {
   color: #fff;
   width: 30%;
 
+}
+
+.user{
+  margin-top: 1.2%;
 }
