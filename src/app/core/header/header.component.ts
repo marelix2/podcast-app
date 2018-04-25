@@ -15,10 +15,7 @@ export class HeaderComponent implements OnInit {
   podcasts: SampleNames[];
 
   constructor(private formBuilder: FormBuilder,
-              private searchService: SearchService,
-              private iconRegistry: MatIconRegistry,
-              private sanitizer: DomSanitizer) {
-    this.iconRegistry.addSvgIcon("search", sanitizer.bypassSecurityTrustResourceUrl('assets/img/headerIco/search-icon.svg') )
+              private searchService: SearchService) {
   }
 
   ngOnInit() {

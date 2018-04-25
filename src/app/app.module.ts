@@ -17,6 +17,8 @@ import { RegisterComponent } from './login/register/register.component';
 import {LoginService} from "./services/login.service"
 import {MatButtonModule, MatDividerModule, MatFormFieldModule, MatIconModule, MatInputModule} from "@angular/material";
 import {RoutingModule} from "./routing.module";
+import {MatCardModule} from '@angular/material/card';
+import {SetupsService} from "./services/setups.service";
 
 
 
@@ -41,10 +43,11 @@ import {RoutingModule} from "./routing.module";
     MatDividerModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
 
   ],
-  providers: [SearchService, AngularFireAuth, LoginService],
+  providers: [SearchService, AngularFireAuth, LoginService, SetupsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
-<div class="container" formGroup="searchForm">
-  <mat-icon svgIcon="search"></mat-icon>
+<div class="container" [formGroup]="searchForm">
+
+  <div class="flex-container">
+
+  <mat-icon>search</mat-icon>
 
   <mat-form-field>
     <input  type="text" matInput formControlName='search' placeholder="search" [matAutocomplete]="auto">
@@ -10,6 +13,6 @@
       {{ n?.name }}
     </mat-option>
   </mat-autocomplete>
-
+  </div>
 
 </div>

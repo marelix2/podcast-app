@@ -10,6 +10,24 @@
   background: linear-gradient(to bottom, rgb(87,63,82) , rgb(140,63,82));
 }
 
-mat-form-field{
+.flex-container{
+
+  display: flex;
+
+  align-items: baseline;
+  flex-wrap: wrap;
+  align-content: space-between;
+
+}
+
+.flex-container > *{
+
+
+}
+
+
+mat-form-field {
   color: #fff;
+  width: 30%;
+
 }

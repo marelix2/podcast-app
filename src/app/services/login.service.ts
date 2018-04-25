@@ -34,6 +34,7 @@ export class LoginService {
       .then(value => {
         console.log('Nice, it worked!', value);
         this.userUid = value.uid;
+
       })
       .catch(err => {
         console.log('Something went wrong!',err.message);
