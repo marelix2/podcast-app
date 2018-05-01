@@ -17,16 +17,16 @@
     </button>
   </mat-menu>
 <nav>
-  <button mat-button color="primary" >Przeglądaj</button>
-  <button mat-button color="primary" >Radio</button>
+  <button mat-button color="primary" [routerLink]="['/explore']" [routerLinkActive]="'mat-button.active'" >Przeglądaj</button>
+  <button mat-button color="primary" [routerLink]="['/radio']" [routerLinkActive]="'mat-button.active'" >Radio</button>
 
   <pre>biblioteka</pre>
   <mat-divider></mat-divider>
 
-  <button mat-button color="primary" >Ostatnio odtwarzane</button>
-  <button mat-button color="primary" >Podcasty</button>
-  <button mat-button color="primary" >Serie</button>
-  <button mat-button color="primary" >Wykonawcy</button>
+  <button mat-button color="primary" [routerLink]="['/rec']" [routerLinkActive]="'mat-button.active'">Ostatnio odtwarzane</button>
+  <button mat-button color="primary" [routerLink]="['/podcasts']" [routerLinkActive]="'mat-button.active'">Podcasty</button>
+  <button mat-button color="primary" [routerLink]="['/series']" [routerLinkActive]="'mat-button.active'">Serie</button>
+  <button mat-button color="primary" [routerLink]="['/artists']" [routerLinkActive]="'mat-button.active'">Wykonawcy</button>
 
 
   <pre>playlisty</pre>

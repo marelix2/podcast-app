@@ -15,6 +15,7 @@ import { PanelButtonsComponent } from './music-panel/panel-buttons/panel-buttons
 import { VolumeBarComponent } from './music-panel/volume-bar/volume-bar.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSliderModule} from '@angular/material/slider';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {MatSliderModule} from '@angular/material/slider';
     MatDividerModule,
     FlexLayoutModule,
     MatProgressBarModule,
-    MatSliderModule
+    MatSliderModule,
+    RouterModule
 
 
   ],
