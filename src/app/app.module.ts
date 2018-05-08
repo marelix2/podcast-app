@@ -21,6 +21,7 @@ import {MatCardModule} from '@angular/material/card';
 import {SetupsService} from "./shared/services/setups.service";
 import {LayoutService} from "./shared/services/layout.service";
 import {AuthGuard} from "./shared/guards/auth.guard";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 
@@ -46,7 +47,8 @@ import {AuthGuard} from "./shared/guards/auth.guard";
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    FlexLayoutModule
 
   ],
   providers: [SearchService, AngularFireAuth, LoginService, SetupsService, LayoutService, AuthGuard ],

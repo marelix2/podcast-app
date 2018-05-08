@@ -11,7 +11,7 @@ export class LoginService {
 
 
   user: Observable<firebase.User>;
-  userUid : string;
+  userUid: string;
   private isLoggedInApp = false;
 
   constructor(private afAuth: AngularFireAuth,
@@ -43,6 +43,8 @@ export class LoginService {
         this.userUid = value.uid;
         this.layoutService.showSidebar();
         this.layoutService.showHeader();
+        this.layoutService.showMusicPannel();
+        this.isLoggedInApp = true;
         this.router.navigate(['/explore']);
         console.log('Nice, it worked!', value);
 
@@ -58,8 +60,10 @@ export class LoginService {
       .auth
       .signOut();
 
+    this.isLoggedInApp = false;
     this.layoutService.hideHeader();
     this.layoutService.hideSidebar();
+    this.layoutService.hideMusicPannel();
 
   }
 

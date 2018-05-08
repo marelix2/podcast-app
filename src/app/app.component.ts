@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title = 'app';
   isHeaderVisible = false;
   isSideBarVisible = false;
+  isMusicPannelVisible= false;
 
   constructor(private layoutService: LayoutService){
 
@@ -24,7 +25,9 @@ export class AppComponent implements OnInit {
     this.layoutService.headerSource$.subscribe((isVisble) => {
       this.isHeaderVisible = isVisble;
     });
-      console.log("jestem w app component")
+    this.layoutService.musicPannelSource$.subscribe((isVisble) => {
+      this.isMusicPannelVisible = isVisble;
+    });
   }
 
 }

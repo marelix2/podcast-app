@@ -6,6 +6,7 @@ export class LayoutService {
 
   sidebarSource$ = new Subject<boolean>();
   headerSource$ = new Subject<boolean>();
+  musicPannelSource$ = new Subject<boolean>();
 
 
   showSidebar() {
@@ -22,6 +23,14 @@ export class LayoutService {
 
   hideHeader() {
     this.headerSource$.next(false);
+  }
+
+  showMusicPannel() {
+    this.musicPannelSource$.next(true);
+  }
+
+  hideMusicPannel() {
+    this.musicPannelSource$.next(false);
   }
 
 

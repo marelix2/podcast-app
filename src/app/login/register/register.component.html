@@ -1,13 +1,26 @@
-<div class="container" [formGroup]="registerData">
+<div class="login-container"  fxLayout="row" fxLayoutAlign="center"[formGroup]="registerData">
 
-  <mat-form-field>
-    <input  type="text" matInput formControlName='email' placeholder="email">
+  <div fxLayout="column" fxFlex="80" fxLayoutAlign="auto" >
+    <mat-form-field >
+      <input  type="text" matInput formControlName='email' placeholder="email" >
 
-  </mat-form-field>
-  <mat-form-field>
-    <input  type="password" matInput formControlName='password' placeholder="password">
-  </mat-form-field>
+    </mat-form-field >
 
-  <button mat-raised-button color="primary" (click)="signUp()"> Register</button>
+    <mat-form-field>
+      <input  type="password" matInput formControlName='password' placeholder="password">
+    </mat-form-field>
+
+
+    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="2%">
+      <button mat-raised-button color="accent" [routerLink]="['/login']"> Go back</button>
+      <button mat-raised-button color="primary" (click)="signUp()"> Register</button>
+
+
+    </div>
+
+  </div>
+
+
+
 
 </div>
