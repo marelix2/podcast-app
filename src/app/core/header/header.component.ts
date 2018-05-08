@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {SearchService} from "../../services/search.service";
+import {SearchService} from "../../shared/services/search.service";
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from "@angular/platform-browser";
-import {LoginService} from "../../services/login.service";
+import {LoginService} from "../../shared/services/login.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private searchService: SearchService,
-              private loginService: LoginService) {
+              private loginService: LoginService,
+              private router : Router) {
   }
 
   ngOnInit() {
@@ -41,6 +43,8 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.loginService.logout();
+    this.router.navigate(['/login']);
+
   }
 
 }

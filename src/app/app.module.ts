@@ -10,15 +10,17 @@ import {environment} from "../environments/environment";
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SiteContentModule} from "./site-content/site-content.module";
-import {SearchService} from "./services/search.service";
+import {SearchService} from "./shared/services/search.service";
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
-import {LoginService} from "./services/login.service"
+import {LoginService} from "./shared/services/login.service"
 import {MatButtonModule, MatDividerModule, MatFormFieldModule, MatIconModule, MatInputModule} from "@angular/material";
 import {RoutingModule} from "./routing.module";
 import {MatCardModule} from '@angular/material/card';
-import {SetupsService} from "./services/setups.service";
+import {SetupsService} from "./shared/services/setups.service";
+import {LayoutService} from "./shared/services/layout.service";
+import {AuthGuard} from "./shared/guards/auth.guard";
 
 
 
@@ -47,7 +49,7 @@ import {SetupsService} from "./services/setups.service";
     MatCardModule
 
   ],
-  providers: [SearchService, AngularFireAuth, LoginService, SetupsService],
+  providers: [SearchService, AngularFireAuth, LoginService, SetupsService, LayoutService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

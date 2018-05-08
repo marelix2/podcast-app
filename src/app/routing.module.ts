@@ -10,13 +10,16 @@ import {PodcastsComponent} from "./site-content/podcasts/podcasts.component";
 import {SeriesComponent} from "./site-content/series/series.component";
 import {ArtistsComponent} from "./site-content/artists/artists.component";
 import {RadioComponent} from "./site-content/radio/radio.component";
+import {AuthGuard} from "./shared/guards/auth.guard";
 
 const APP_ROUTE: Route[] = [
+
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'login'
-  },
+       path: '',
+       pathMatch: 'full',
+      redirectTo: 'login',
+    canActivate: [AuthGuard]
+     },
   {
     path: 'login',
     component: <any>LoginComponent
@@ -27,27 +30,33 @@ const APP_ROUTE: Route[] = [
   },
   {
     path: 'explore',
-    component: <any>ExploreComponent
+    component: <any>ExploreComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'radio',
-    component: <any>RadioComponent
+    component: <any>RadioComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'rec',
-    component: <any>RecentlyPlayedComponent
+    component: <any>RecentlyPlayedComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'podcasts',
-    component: <any>PodcastsComponent
+    component: <any>PodcastsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'series',
-    component: <any>SeriesComponent
+    component: <any>SeriesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'artists',
-    component: <any>ArtistsComponent
+    component: <any>ArtistsComponent,
+    canActivate: [AuthGuard]
   },
 
 

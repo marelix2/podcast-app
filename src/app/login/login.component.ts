@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {LoginService} from "../services/login.service";
+import {LoginService} from "../shared/services/login.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginData: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-              private loginService: LoginService ) {
+              private loginService: LoginService) {
 
   }
 
@@ -31,7 +32,8 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loginService.login(this.loginData.getRawValue());
-    this.loginData.reset();
   }
+
+
 
 }

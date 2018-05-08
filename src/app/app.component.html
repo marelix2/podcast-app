@@ -1,8 +1,11 @@
-<app-header></app-header>
-<app-sidenav></app-sidenav>
+<app-header *ngIf="isHeaderVisible"></app-header>
+<app-sidenav *ngIf="isSideBarVisible"></app-sidenav>
 
 <router-outlet></router-outlet>
 
 <app-music-panel></app-music-panel>
+
+
+
 
 

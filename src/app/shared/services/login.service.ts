@@ -2,14 +2,21 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import * as firebase from "firebase";
 import {AngularFireAuth} from "angularfire2/auth";
+import {LayoutService} from "./layout.service";
+import {Router} from "@angular/router";
+
 
 @Injectable()
 export class LoginService {
 
+
   user: Observable<firebase.User>;
   userUid : string;
+  private isLoggedInApp = false;
 
-  constructor(private afAuth: AngularFireAuth) {
+  constructor(private afAuth: AngularFireAuth,
+              private layoutService: LayoutService,
+              private router: Router) {
     this.user = afAuth.authState;
   }
 
@@ -32,12 +39,17 @@ export class LoginService {
       .auth
       .signInWithEmailAndPassword(data.email, data.password)
       .then(value => {
-        console.log('Nice, it worked!', value);
+
         this.userUid = value.uid;
+        this.layoutService.showSidebar();
+        this.layoutService.showHeader();
+        this.router.navigate(['/explore']);
+        console.log('Nice, it worked!', value);
 
       })
       .catch(err => {
         console.log('Something went wrong!',err.message);
+        this.router.navigate(['/login']);
       });
   }
 
@@ -45,11 +57,19 @@ export class LoginService {
     this.afAuth
       .auth
       .signOut();
+
+    this.layoutService.hideHeader();
+    this.layoutService.hideSidebar();
+
   }
 
   getUserId() {
 
     return this.userUid;
+  }
+
+   isLoggedIn(){
+    return this.isLoggedInApp;
   }
 
 

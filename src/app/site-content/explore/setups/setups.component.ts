@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SetupsService} from "../../../services/setups.service";
+import {SetupsService} from "../../../shared/services/setups.service";
 
 @Component({
   selector: 'app-setups',
