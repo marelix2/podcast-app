@@ -6,7 +6,7 @@ import { MusicPanelComponent } from './music-panel/music-panel.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {ReactiveFormsModule} from "@angular/forms";
 import {
-  MatButtonModule,
+  MatButtonModule, MatCardModule,
   MatDialogModule,
   MatDividerModule,
   MatFormFieldModule,
@@ -23,6 +23,7 @@ import { VolumeBarComponent } from './music-panel/volume-bar/volume-bar.componen
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSliderModule} from '@angular/material/slider';
 import {RouterModule} from "@angular/router";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -42,7 +43,10 @@ import {RouterModule} from "@angular/router";
     MatSliderModule,
     RouterModule,
     FlexLayoutModule,
-    MatDialogModule
+    MatDialogModule,
+    SharedModule,
+    MatProgressBarModule,
+    MatCardModule
 
 
   ],

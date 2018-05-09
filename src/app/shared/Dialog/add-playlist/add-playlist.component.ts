@@ -13,7 +13,7 @@ export class AddPlaylistComponent implements OnInit {
   ngOnInit() {
   }
 
-  onNoClick(){
+  onNoClick() {
     this.dialogRef.close();
   }
 

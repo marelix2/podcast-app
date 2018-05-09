@@ -15,6 +15,7 @@ import {FormsModule} from "@angular/forms";
 import {SidenavComponent} from "../core/sidenav/sidenav.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatMenuModule} from "@angular/material/menu";
+import { UsernamePipe } from './pipes/username.pipe';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import {MatMenuModule} from "@angular/material/menu";
     MatDividerModule,
   ],
   entryComponents: [SidenavComponent, AddPlaylistComponent],
-  declarations: [AddPlaylistComponent]
+  exports: [UsernamePipe],
+  declarations: [AddPlaylistComponent, UsernamePipe]
 })
 export class SharedModule {}

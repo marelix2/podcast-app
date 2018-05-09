@@ -5,9 +5,9 @@ import {Observable} from "rxjs/Observable";
 @Injectable()
 export class SearchService {
 
-  podcastColl: AngularFirestoreCollection<SampleNames>;
-  podcasts: Observable<SampleNames[]>;
-  podcastDoc: AngularFirestoreDocument<SampleNames>;
+  podcastColl: AngularFirestoreCollection<SampleNamesModel>;
+  podcasts: Observable<SampleNamesModel[]>;
+  podcastDoc: AngularFirestoreDocument<SampleNamesModel>;
 
   constructor(private afs: AngularFirestore) {
     this.podcastColl = this.afs.collection('test');
@@ -16,7 +16,7 @@ export class SearchService {
   loadPodcasts(){
     this.podcasts = this.afs.collection('test').snapshotChanges().map(changes => {
       return changes.map(c => {
-        const data = c.payload.doc.data() as SampleNames;
+        const data = c.payload.doc.data() as SampleNamesModel;
         return data;
       })
     })

@@ -14,23 +14,31 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
 
   searchForm: FormGroup;
-  podcasts: SampleNames[];
+  podcasts: SampleNamesModel[];
+  user: UserModel;
 
   constructor(private formBuilder: FormBuilder,
               private searchService: SearchService,
               private loginService: LoginService,
-              private router : Router) {
+              private router: Router) {
   }
 
   ngOnInit() {
+    this.loadUser();
     this.searchForm = this.searchFormBuild();
     this.loadPodcasts();
+
   }
 
   searchFormBuild(): FormGroup {
     return this.formBuilder.group({
       search: [null]
     });
+  }
+
+  loadUser() {
+
+   this.user =  JSON.parse(localStorage.getItem('user');
   }
 
   loadPodcasts() {

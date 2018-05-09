@@ -23,12 +23,11 @@
 <div  fxLayoutAlign="end"  fxFlex >
 
   <div class="user">
-
-    User Nickname
+      {{user?.email | username}}
   </div>
 
     <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>call_received</mat-icon>
+      <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>

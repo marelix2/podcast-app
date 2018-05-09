@@ -4,11 +4,13 @@ import * as firebase from "firebase";
 import {AngularFireAuth} from "angularfire2/auth";
 import {LayoutService} from "./layout.service";
 import {Router} from "@angular/router";
+import {Subject} from "rxjs/Subject";
 
 
 @Injectable()
 export class LoginService {
 
+  userSource$ = new Subject<UserModel>();
 
   user: Observable<firebase.User>;
   userUid: string;
@@ -34,13 +36,17 @@ export class LoginService {
   }
 
   login(data: {email: string, password: string}) {
-    console.log(data.email, data.password);
+   // console.log(data.email, data.password);
     this.afAuth
       .auth
       .signInWithEmailAndPassword(data.email, data.password)
       .then(value => {
 
+
         this.userUid = value.uid;
+        localStorage.setItem("user", JSON.stringify({email: data.email , uid: value.uid}));
+
+
         this.layoutService.showSidebar();
         this.layoutService.showHeader();
         this.layoutService.showMusicPannel();

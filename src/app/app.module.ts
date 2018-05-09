@@ -52,11 +52,17 @@ import {AddPlaylistComponent} from "./shared/Dialog/add-playlist/add-playlist.co
     MatInputModule,
     MatCardModule,
     FlexLayoutModule,
-    SharedModule,
-
-
+    SharedModule
   ],
-  providers: [SearchService, AngularFireAuth, LoginService, SetupsService, LayoutService, AuthGuard , UserPlaylistsService],
+  providers: [
+    SearchService,
+    AngularFireAuth,
+    LoginService,
+    SetupsService,
+    LayoutService,
+    AuthGuard,
+    UserPlaylistsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
