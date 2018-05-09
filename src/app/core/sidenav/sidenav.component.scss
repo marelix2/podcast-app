@@ -25,14 +25,19 @@ pre{
 
 .playlist-button{
   margin-top: 3%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .mat-button.active {
   border-right: rgb(87,63,82) solid 2px;
 
+}
+
+.single-ele{
+  min-width: 100%;
+}
+
+.playlists{
+  padding: 10px 0;
 }
 
 

@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
 
   loginFormBuild(): FormGroup {
     return this.formBuilder.group( {
-      email: ['', [Validators.email, Validators.required]],
-      password: ['', Validators.required]
+      email: ['aa@aa.aa', [Validators.email, Validators.required]],
+      password: ['aaaaaa', Validators.required]
     });
 
   }

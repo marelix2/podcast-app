@@ -22,6 +22,9 @@ import {SetupsService} from "./shared/services/setups.service";
 import {LayoutService} from "./shared/services/layout.service";
 import {AuthGuard} from "./shared/guards/auth.guard";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {SharedModule} from "./shared/shared.module";
+import {UserPlaylistsService} from "./shared/services/user-playlists.service";
+import {AddPlaylistComponent} from "./shared/Dialog/add-playlist/add-playlist.component";
 
 
 
@@ -48,10 +51,12 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatIconModule,
     MatInputModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SharedModule,
+
 
   ],
-  providers: [SearchService, AngularFireAuth, LoginService, SetupsService, LayoutService, AuthGuard ],
+  providers: [SearchService, AngularFireAuth, LoginService, SetupsService, LayoutService, AuthGuard , UserPlaylistsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

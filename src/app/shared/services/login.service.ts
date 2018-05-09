@@ -70,6 +70,7 @@ export class LoginService {
   getUserId() {
 
     return this.userUid;
+
   }
 
    isLoggedIn(){

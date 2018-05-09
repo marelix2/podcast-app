@@ -5,7 +5,14 @@ import { HeaderComponent } from './header/header.component';
 import { MusicPanelComponent } from './music-panel/music-panel.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {ReactiveFormsModule} from "@angular/forms";
-import {MatButtonModule, MatDividerModule, MatFormFieldModule, MatIconModule, MatInputModule} from "@angular/material";
+import {
+  MatButtonModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule
+} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatMenuModule} from '@angular/material/menu';
 import {FlexLayoutModule} from "@angular/flex-layout";
@@ -33,7 +40,9 @@ import {RouterModule} from "@angular/router";
     FlexLayoutModule,
     MatProgressBarModule,
     MatSliderModule,
-    RouterModule
+    RouterModule,
+    FlexLayoutModule,
+    MatDialogModule
 
 
   ],

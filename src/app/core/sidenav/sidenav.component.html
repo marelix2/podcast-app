@@ -1,5 +1,8 @@
-<div class="constainer">
-  <button mat-icon-button [matMenuTriggerFor]="menu">
+<div class="constainer" fxLayout="column" fxLayoutAlign="start" fxFlex="90">
+  <div>
+    <nav>
+      <div fxFlex="5">
+  <button mat-icon-button [matMenuTriggerFor]="menu" >
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -16,7 +19,9 @@
       <span>Disable alerts</span>
     </button>
   </mat-menu>
-<nav>
+      </div>
+
+<div fxFlex="100">
   <button mat-button color="primary" [routerLink]="['/explore']" [routerLinkActive]="'mat-button.active'" >Przeglądaj</button>
   <button mat-button color="primary" [routerLink]="['/radio']" [routerLinkActive]="'mat-button.active'" >Radio</button>
 
@@ -27,17 +32,30 @@
   <button mat-button color="primary" [routerLink]="['/podcasts']" [routerLinkActive]="'mat-button.active'">Podcasty</button>
   <button mat-button color="primary" [routerLink]="['/series']" [routerLinkActive]="'mat-button.active'">Serie</button>
   <button mat-button color="primary" [routerLink]="['/artists']" [routerLinkActive]="'mat-button.active'">Wykonawcy</button>
+</div>
 
-
+<div fxFlex="100">
   <pre>playlisty</pre>
   <mat-divider></mat-divider>
 
+  <div class="playlists" *ngFor="let p of userPlaylists">
+    <div fxFlex="100" fxLayoutAlign="center">{{p.title}}</div>
 
-<div class="playlist-button">
-  <button mat-fab color="primary"><mat-icon>add</mat-icon></button>
+  </div>
+
 </div>
+
+
+
 
 
 </nav>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="playlist-button" fxFlex fxLayoutAlign="center" fxLayoutGap="2%">
 
-</div>
+    <button mat-mini-fab color="primary" (click)="openDialog()"><mat-icon>add</mat-icon></button>
+    <pre>dodaj playliste</pre>
+
+
+  </div>
