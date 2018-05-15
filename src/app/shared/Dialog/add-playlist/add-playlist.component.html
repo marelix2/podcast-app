@@ -1,12 +1,32 @@
-<div class="my-dialog">
+<div class="my-dialog" fxLayout="column" fxLayoutGap="10">
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <input matInput>
+  <p fxFlex="90" fxLayoutAlign="center center">Dodaj Playliste</p>
+  <mat-divider></mat-divider>
+
+  <mat-form-field fxFlex="100" fxLayoutAlign="center center" class="title_input">
+    <input matInput placeholder="Podaj tytuł">
   </mat-form-field>
+
+  <div fxLayout="row">
+    <div fxFlex="40"  fxLayout="column" fxLayoutAlign="center bottom">
+      obrazy
+      <div class="playlist_img">
+
+      </div>
+      <button mat-raised-button color="primary">Wybierz obraz</button>
+    </div>
+    <div fxFlex="50" fxFlexOffset="10" fxLayout="column" fxLayoutAlign="center bottom">
+      opis
+      <mat-form-field class="example-full-width" fxLayoutAlign="center bottom">
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </div>
+
+  </div>
+
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="" cdkFocusInitial>Ok</button>
+<div mat-dialog-actions fxLayoutAlign="center center">
+  <button mat-raised-button color="accent" (click)="onNoClick()">Anuluj</button>
+  <button mat-raised-button color="primary"[mat-dialog-close]="" cdkFocusInitial>Utwórz</button>
 </div>
 </div>

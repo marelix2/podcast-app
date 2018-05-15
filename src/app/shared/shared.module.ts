@@ -16,6 +16,7 @@ import {SidenavComponent} from "../core/sidenav/sidenav.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatMenuModule} from "@angular/material/menu";
 import { UsernamePipe } from './pipes/username.pipe';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { UsernamePipe } from './pipes/username.pipe';
     MatMenuModule,
     MatButtonModule,
     MatDividerModule,
+    FlexLayoutModule
   ],
   entryComponents: [SidenavComponent, AddPlaylistComponent],
   exports: [UsernamePipe],

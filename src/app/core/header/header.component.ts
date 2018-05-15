@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {SearchService} from "../../shared/services/search.service";
-import {MatIconRegistry} from '@angular/material';
-import {DomSanitizer} from "@angular/platform-browser";
 import {LoginService} from "../../shared/services/login.service";
 import {Router} from "@angular/router";
 
@@ -38,7 +36,7 @@ export class HeaderComponent implements OnInit {
 
   loadUser() {
 
-   this.user =  JSON.parse(localStorage.getItem('user');
+   this.user =  JSON.parse(localStorage.getItem('user'));
   }
 
   loadPodcasts() {
@@ -49,7 +47,7 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  logout(){
+  logout() {
     this.loginService.logout();
     this.router.navigate(['/login']);
 
