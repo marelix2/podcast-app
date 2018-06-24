@@ -32,12 +32,31 @@ export class UserPlaylistsService {
   loadSinglePlaylist(id: string): Observable<SinglePlaylistModel> {
     return this.userSinglePlaylist = this.afs.doc(`userPlaylist/${id}`)
    .snapshotChanges().map(changes => {
-     console.log(changes.payload.data());
+      console.log(changes.payload.data());
       return changes.payload.data() as SinglePlaylistModel;
 
     });
   }
 
+
+  loadPodcast(userSinglePlaylist: string): Observable<playlistTracks> {
+
+    return  this.afs.doc(`podcasts/${userSinglePlaylist}`)
+      .snapshotChanges().map(changes => {
+        console.log("loadPodcast", changes.payload.data());
+        const data = changes.payload.data() as playlistTracks;
+        console.log(data.author," co tam kolego");
+        this.afs.doc(`authors/${data.author}`).snapshotChanges().map( c => {
+          console.log(c.payload.data())
+          return c.payload.data() as {author: string};
+        }).subscribe(ref => {
+          data.author = ref.author;
+        });
+
+        return data;
+
+      });
+  }
 
 
 

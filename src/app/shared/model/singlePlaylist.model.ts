@@ -1,7 +1,9 @@
+
+
 interface SinglePlaylistModel {
 
   img: string;
   playlistTitle: string;
-  tracks: Array<playlistTracks>;
+  tracks: Array<string>;
 
 }

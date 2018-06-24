@@ -11,9 +11,9 @@
     <div fxFlex="40"  fxLayout="column" fxLayoutAlign="center bottom">
       obrazy
       <div class="playlist_img">
-
       </div>
-      <button mat-raised-button color="primary">Wybierz obraz</button>
+      <input type="file" (change)="onNativeInputFileSelect($event)" #inputFile hidden />
+      <button mat-raised-button id="uploadButton" color="primary" (click)="selectFile()">Wybierz obraz</button>
     </div>
     <div fxFlex="50" fxFlexOffset="10" fxLayout="column" fxLayoutAlign="center bottom">
       opis
