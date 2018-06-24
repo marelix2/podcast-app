@@ -1,0 +1,42 @@
+p{
+  display: flex;
+  flex-direction: column;
+  margin: 10vh 20vw;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 80vw;
+  height: 60vh;
+  margin-left: 14vw;
+  margin-top: 12vh;
+
+}
+
+table {
+
+  color: #fff;
+  font-family: Arial;
+}
+
+table th {
+  text-align: start;
+  padding: 2vh;
+  width: 15vw;
+  background: rgb(100,63,82) ;
+}
+
+table td {
+  width: 15vw;
+  padding: 2vh;
+  text-align: start;
+
+}
+
+table td {
+  border-bottom: 1px solid  rgb(87,63,82) ;
+}
+
+

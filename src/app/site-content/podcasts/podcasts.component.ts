@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DisplayPodcastService} from "../../shared/services/display-podcast.service";
 
 @Component({
   selector: 'app-podcasts',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PodcastsComponent implements OnInit {
 
-  constructor() { }
+  tracks : playlistTracks[];
+
+  constructor( private displayPodcastService: DisplayPodcastService) { }
 
   ngOnInit() {
+    this.tracks = new Array<playlistTracks>();
+    this.loadPodcasts();
+  }
+
+  loadPodcasts(){
+
+    this.displayPodcastService.loadPlaylists().subscribe(ref => {
+      this.tracks = ref;
+    });
+
+
+
   }
 
 }

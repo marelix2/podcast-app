@@ -1,3 +1,26 @@
-<p>
-  podcasts works!
-</p>
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+
+      <th>Tytuł</th>
+      <th>Wykonawca</th>
+      <th>Data</th>
+      <th class="action"></th>
+    </tr>
+    </thead>
+    <!---->
+    <tbody *ngFor="let t of tracks" >
+    <tr >
+      <td>{{t.title}}</td>
+      <td>{{t.author}}</td>
+      <td></td>
+      <td class="action">( + )</td>
+    </tr>
+    </tbody>
+
+  </table>
+
+</div>
+
+

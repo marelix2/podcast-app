@@ -45,7 +45,6 @@ export class UserPlaylistsService {
       .snapshotChanges().map(changes => {
         console.log("loadPodcast", changes.payload.data());
         const data = changes.payload.data() as playlistTracks;
-        console.log(data.author," co tam kolego");
         this.afs.doc(`authors/${data.author}`).snapshotChanges().map( c => {
           console.log(c.payload.data())
           return c.payload.data() as {author: string};

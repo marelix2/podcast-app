@@ -13,6 +13,7 @@ import {forEach} from "@angular/router/src/utils/collection";
 
 export class SinglePlaylistComponent implements OnInit{
 
+
   singlePlaylist: SinglePlaylistModel;
   podcast: Array<playlistTracks>;
 
@@ -21,7 +22,7 @@ export class SinglePlaylistComponent implements OnInit{
 
   ngOnInit() {
 
-    this.podcast= new Array<playlistTracks>();
+    this.podcast = new Array<playlistTracks>();
     this.loadPlaylist();
   }
 
@@ -29,7 +30,8 @@ export class SinglePlaylistComponent implements OnInit{
 
   loadPlaylist() {
 
-    const id = this.route.snapshot.paramMap.get('playlistId');
+     const id = this.route.snapshot.paramMap.get('playlistId');
+
 
     this.userPlaylistsService.loadSinglePlaylist(id).subscribe( singlePlaylist => {
       this.singlePlaylist = singlePlaylist;

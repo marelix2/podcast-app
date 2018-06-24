@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LoginService} from "../../shared/services/login.service";
 
@@ -12,21 +12,22 @@ export class RegisterComponent implements OnInit {
   registerData: FormGroup;
 
   constructor(private loginService: LoginService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder) {
+  }
 
   ngOnInit() {
     this.registerData = this.registerFormBuild();
   }
 
   registerFormBuild(): FormGroup {
-    return this.formBuilder.group( {
+    return this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required]
     });
 
   }
 
-  signUp(){
+  signUp() {
     this.loginService.signup(this.registerData.getRawValue());
   }
 

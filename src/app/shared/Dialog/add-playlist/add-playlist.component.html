@@ -12,7 +12,7 @@
       obrazy
       <div class="playlist_img">
       </div>
-      <input type="file" (change)="onNativeInputFileSelect($event)" #inputFile hidden />
+      <input type="file" (change)="onNativeInputFileSelect($event)" #inputFile hidden  accept="image/x-png,image/gif,image/jpeg"/>
       <button mat-raised-button id="uploadButton" color="primary" (click)="selectFile()">Wybierz obraz</button>
     </div>
     <div fxFlex="50" fxFlexOffset="10" fxLayout="column" fxLayoutAlign="center bottom">
