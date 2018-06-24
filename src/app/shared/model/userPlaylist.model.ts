@@ -1,7 +1,7 @@
 interface UserPlaylistModel {
   playlistId: string;
   uid: string;
-  title: string;
+  playlistTitle: string;
   img: string;
   tracks: Array<string>;
 

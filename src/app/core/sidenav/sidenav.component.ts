@@ -22,8 +22,6 @@ export class SidenavComponent implements OnInit {
   loadPlaylists() {
     this.userPlaylistService.loadPlaylists().subscribe(pList => {
       this.userPlaylists = pList;
-
-
     });
   }
     openDialog(): void {

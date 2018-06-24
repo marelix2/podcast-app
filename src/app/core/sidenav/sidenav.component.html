@@ -38,8 +38,8 @@
   <pre>playlisty</pre>
   <mat-divider></mat-divider>
 
-  <div class="playlists" *ngFor="let p of userPlaylists">
-    <div fxFlex="100" fxLayoutAlign="center">{{p.title}}</div>
+  <div class="playlists" *ngFor="let p of userPlaylists" [routerLink]="['/playlist' , p.playlistId]" [routerLinkActive]="'mat-button.active '">
+    <div fxFlex="100" fxLayoutAlign="center" >{{p.playlistTitle}}</div>
 
   </div>
 

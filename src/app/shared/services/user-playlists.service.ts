@@ -6,9 +6,9 @@ import {AngularFirestore, AngularFirestoreCollection} from "angularfire2/firesto
 @Injectable()
 export class UserPlaylistsService {
 
-  uPlaylistColl: AngularFirestoreCollection<UserPlaylistModel>;
   userPlaylists: Observable<UserPlaylistModel[]>;
-  // uPlaylistsDoc: AngularFirestoreDocument<UserPlaylistsModel>;
+  userSinglePlaylist: Observable<SinglePlaylistModel>;
+
 
   constructor(private afs: AngularFirestore,
               private loginService: LoginService) { }
@@ -27,9 +27,17 @@ export class UserPlaylistsService {
 
   addPlaylist() {
 
-
-
   }
+
+  loadSinglePlaylist(id: string): Observable<SinglePlaylistModel> {
+    return this.userSinglePlaylist = this.afs.doc(`userPlaylist/${id}`)
+   .snapshotChanges().map(changes => {
+     console.log(changes.payload.data());
+      return changes.payload.data() as SinglePlaylistModel;
+
+    });
+  }
+
 
 
 

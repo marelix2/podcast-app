@@ -17,6 +17,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatMenuModule} from "@angular/material/menu";
 import { UsernamePipe } from './pipes/username.pipe';
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { SinglePlaylistComponent } from './single-playlist/single-playlist.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,6 @@ import {FlexLayoutModule} from "@angular/flex-layout";
   ],
   entryComponents: [SidenavComponent, AddPlaylistComponent],
   exports: [UsernamePipe],
-  declarations: [AddPlaylistComponent, UsernamePipe]
+  declarations: [AddPlaylistComponent, UsernamePipe, SinglePlaylistComponent]
 })
 export class SharedModule {}

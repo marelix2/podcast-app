@@ -11,6 +11,7 @@ import {SeriesComponent} from "./site-content/series/series.component";
 import {ArtistsComponent} from "./site-content/artists/artists.component";
 import {RadioComponent} from "./site-content/radio/radio.component";
 import {AuthGuard} from "./shared/guards/auth.guard";
+import {SinglePlaylistComponent} from "./shared/single-playlist/single-playlist.component";
 
 const APP_ROUTE: Route[] = [
 
@@ -56,6 +57,11 @@ const APP_ROUTE: Route[] = [
   {
     path: 'artists',
     component: <any>ArtistsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'playlist/:playlistId',
+    component: <any>SinglePlaylistComponent,
     canActivate: [AuthGuard]
   },
 
