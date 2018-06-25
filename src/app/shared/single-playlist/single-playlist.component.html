@@ -10,7 +10,7 @@
   </tr>
   </thead>
   <!---->
-  <tbody *ngFor="let t of podcast" >
+  <tbody *ngFor="let t of podcast"  (click)="savePlaylistId(t.id)" style="cursor: pointer">
   <tr >
     <td>{{t.title}}</td>
     <td>{{t.author}}</td>

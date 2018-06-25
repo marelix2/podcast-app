@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { HeaderComponent } from './header/header.component';
-import { MusicPanelComponent } from './music-panel/music-panel.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SidenavComponent} from './sidenav/sidenav.component';
+import {HeaderComponent} from './header/header.component';
+import {MusicPanelComponent} from './music-panel/music-panel.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {ReactiveFormsModule} from "@angular/forms";
 import {
@@ -16,10 +16,10 @@ import {
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatMenuModule} from '@angular/material/menu';
 import {FlexLayoutModule} from "@angular/flex-layout";
-import { ActivePodcastComponent } from './music-panel/active-podcast/active-podcast.component';
-import { ProgressBarComponent } from './music-panel/progress-bar/progress-bar.component';
-import { PanelButtonsComponent } from './music-panel/panel-buttons/panel-buttons.component';
-import { VolumeBarComponent } from './music-panel/volume-bar/volume-bar.component';
+import {ActivePodcastComponent} from './music-panel/active-podcast/active-podcast.component';
+import {ProgressBarComponent} from './music-panel/progress-bar/progress-bar.component';
+import {PanelButtonsComponent} from './music-panel/panel-buttons/panel-buttons.component';
+import {VolumeBarComponent} from './music-panel/volume-bar/volume-bar.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSliderModule} from '@angular/material/slider';
 import {RouterModule} from "@angular/router";
@@ -51,6 +51,7 @@ import {SharedModule} from "../shared/shared.module";
 
   ],
   exports: [SidenavComponent, HeaderComponent, MusicPanelComponent],
-  declarations: [SidenavComponent, HeaderComponent, MusicPanelComponent, ActivePodcastComponent, ProgressBarComponent, PanelButtonsComponent, VolumeBarComponent]
+  declarations: [SidenavComponent, HeaderComponent, MusicPanelComponent, ActivePodcastComponent, PanelButtonsComponent, VolumeBarComponent]
 })
-export class CoreModule { }
+export class CoreModule {
+}

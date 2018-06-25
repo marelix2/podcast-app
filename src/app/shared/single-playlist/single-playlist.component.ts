@@ -11,14 +11,15 @@ import {forEach} from "@angular/router/src/utils/collection";
   styleUrls: ['./single-playlist.component.scss']
 })
 
-export class SinglePlaylistComponent implements OnInit{
+export class SinglePlaylistComponent implements OnInit {
 
 
   singlePlaylist: SinglePlaylistModel;
   podcast: Array<playlistTracks>;
 
   constructor(private userPlaylistsService: UserPlaylistsService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
 
@@ -26,29 +27,34 @@ export class SinglePlaylistComponent implements OnInit{
     this.loadPlaylist();
   }
 
+  savePlaylistId(id: string) {
+
+    localStorage.removeItem('playlistId');
+    localStorage.setItem('playlistId', JSON.stringify({playlistId: this.route.snapshot.paramMap.get('playlistId'), id: id}));
+
+  }
 
 
   loadPlaylist() {
 
-     const id = this.route.snapshot.paramMap.get('playlistId');
+    const id = this.route.snapshot.paramMap.get('playlistId');
+
+    console.log("id z routa ", id);
 
 
-    this.userPlaylistsService.loadSinglePlaylist(id).subscribe( singlePlaylist => {
+    this.userPlaylistsService.loadSinglePlaylist(id).subscribe(singlePlaylist => {
       this.singlePlaylist = singlePlaylist;
 
-      this.singlePlaylist.tracks.map( reff => {
-       // console.log("single playlist before load podcast", reff);
+      this.singlePlaylist.tracks.map(reff => {
+        // console.log("single playlist before load podcast", reff);
         this.userPlaylistsService.loadPodcast(reff).subscribe(r => {
-           this.podcast.push(r);
+          this.podcast.push(r);
         });
+      });
+
+
     });
 
-
-
-
-
-});
-
-}
+  }
 
 }

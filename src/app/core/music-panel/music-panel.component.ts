@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-music-panel',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MusicPanelComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+
+  displayTime(event) {
+    console.log(event);
+  }
 }

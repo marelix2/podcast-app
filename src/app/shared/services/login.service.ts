@@ -42,7 +42,6 @@ export class LoginService {
       .signInWithEmailAndPassword(data.email, data.password)
       .then(value => {
 
-
         this.userUid = value.uid;
         localStorage.setItem("user", JSON.stringify({email: data.email , uid: value.uid}));
 
