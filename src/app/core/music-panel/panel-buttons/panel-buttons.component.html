@@ -1,13 +1,19 @@
 <div class="padding-buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="1%">
   <button mat-button  ><mat-icon>shuffle</mat-icon></button>
   <button mat-button  ><mat-icon>skip_previous</mat-icon></button>
-  <button mat-mini-fab  color="primary"  (click)="change()" ><mat-icon>play_arrow</mat-icon></button>
+  <button mat-mini-fab  color="primary"  (click)="playTrack()"   ><mat-icon>play_arrow</mat-icon></button>
+  <button mat-mini-fab  color="primary"  (click)="stopTrack()"   ><mat-icon>pause</mat-icon></button>
   <button mat-button ><mat-icon>skip_next</mat-icon></button>
   <button mat-button  ><mat-icon>repeat</mat-icon></button>
 </div>
 
+<div class="progress">
+<p>{{audio.currentTime | secondsPipe}}</p>
 <mat-progress-bar
   [color]="'primary'"
   [mode]="'determinate'"
-  [value]="(audio.currentTime/audio.duration)*100"
-  [bufferValue]="'100'">
+  [value]="(audio.currentTime/audio.duration)*100 "
+  [bufferValue]="'100'"></mat-progress-bar>
+  <p>{{audio.currentTime - audio.duration | secondsPipe}}</p>
+
+</div>

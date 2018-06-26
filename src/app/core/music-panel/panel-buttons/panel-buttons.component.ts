@@ -17,47 +17,41 @@ export class PanelButtonsComponent implements OnInit {
   tracks: AudioPlayerTrack;
   isTrackPlayed = false;
   audio: any = null;
+  isDataLoaded = false;
+
+  trackTime;
 
   singlePlaylist: SinglePlaylistModel;
-  podcast: Array<playlistTracks>;
+  podcast: playlistTracks[];
   playlistId;
+  currentPlaylistId;
 
 
   constructor(private userPlaylistsService: UserPlaylistsService) {
-
+    this.podcast = new Array<playlistTracks>();
+    this.audio = new Audio();
   }
 
   ngOnInit() {
-    this.podcast = new Array<playlistTracks>();
-    this.audio = new Audio();
-    console.log("wyswietlam to i to ", this.audio.uri);
-
-    // this.tracks = {
-    //   id: 1,
-    //   name: 'mane', /*uri: '../../assets/sound/Male-oof-sound-longer.mp3'*/
-    //   uri: 'https://content.production.cdn.art19.com/episodes/e926d8f6-f5bf-4f75-b1f2-42bc411f4775/d473b5eb3d350e0b72851f65ffbdad32fbbe4169247ef07f00d54a8b6a9caab1cc99b96ebec912c93e8f152863f31eb1106a5b44c42e141d30453382af970f98/180623-forttknox-podcast-lutke-final.mp3'
-    // };
 
   }
-
-
 
   change() {
 
-    if (this.isTrackPlayed === false) {
-
-      if (this.audio.uri === undefined) {
-        this.loadTracksList();
-      }
-      this.playTrack();
-    } else {
-      this.stopTrack();
-    }
+    this.loadTracksList();
+    this.playTrack();
   }
+
 
   loadTracksList() {
 
     this.playlistId = JSON.parse(localStorage.getItem('playlistId'));
+
+    if (this.currentPlaylistId !== null && this.playlistId.id !== this.currentPlaylistId.id) {
+      console.log(this.playlistId.id !== this.currentPlaylistId.id, this.playlistId.id, this.currentPlaylistId.id);
+      this.currentPlaylistId = this.playlistId;
+      this.trackTime = 0;
+    }
 
     this.userPlaylistsService.loadSinglePlaylist(this.playlistId.playlistId).subscribe(singlePlaylist => {
       this.singlePlaylist = singlePlaylist;
@@ -67,43 +61,56 @@ export class PanelButtonsComponent implements OnInit {
           this.podcast.push(r);
         });
       });
-
     });
-    console.log(this.search(this.playlistId.id, this.podcast));
-    this.audio.src = this.getSingleTrack();
-    console.log(this.audio.src);
-     this.audio.load();
+
+    this.audio.src = this.searchForTrack(this.playlistId.id, this.podcast);
+    console.log("---------------------");
+    this.audio.load();
   }
 
   playTrack() {
-    this.audio.play();
-    this.isTrackPlayed = true;
+    if (this.currentPlaylistId === undefined) {
+      this.currentPlaylistId = JSON.parse(localStorage.getItem('playlistId'));
+    }
+    this.loadTracksList();
+
+    const playPromise = this.audio.play();
+    if (playPromise !== undefined) {
+      this.audio.currentTime = this.trackTime;
+      playPromise.then(ref => {
+
+      })
+        .catch(error => {
+        });
+    } else {
+
+
+    }
 
 
   }
 
   stopTrack() {
     this.audio.pause();
+    this.trackTime = this.audio.currentTime;
     this.isTrackPlayed = false;
   }
 
 
   getSingleTrack() {
-  // console.log("index czegos tam ", this.podcast, this.playlistId.id) ;
+    console.log("pokazuje", this.playlistId.id, this.podcast);
+    console.log("zwracam ", this.searchForTrack(this.playlistId.id, this.podcast));
 
-    return this.search(this.playlistId.id, this.podcast);
+    return this.searchForTrack(this.playlistId.id, this.podcast);
   }
 
-   search(nameKey, myArray){
-
-
+  searchForTrack(nameKey, myArray) {
     for (const i of myArray) {
+      // console.log("pokazuje iteracje i", i);
       if (i.id === nameKey) {
         return i.url;
       }
     }
   }
-
-
 
 }

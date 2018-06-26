@@ -18,6 +18,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import { UsernamePipe } from './pipes/username.pipe';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { SinglePlaylistComponent } from './single-playlist/single-playlist.component';
+import { SecondsPipePipe } from './pipes/seconds-pipe.pipe';
 
 @NgModule({
   imports: [
@@ -34,7 +35,7 @@ import { SinglePlaylistComponent } from './single-playlist/single-playlist.compo
     FlexLayoutModule
   ],
   entryComponents: [SidenavComponent, AddPlaylistComponent],
-  exports: [UsernamePipe],
-  declarations: [AddPlaylistComponent, UsernamePipe, SinglePlaylistComponent]
+  exports: [UsernamePipe,SecondsPipePipe],
+  declarations: [AddPlaylistComponent, UsernamePipe, SinglePlaylistComponent, SecondsPipePipe]
 })
 export class SharedModule {}

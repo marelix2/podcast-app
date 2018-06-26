@@ -17,7 +17,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatMenuModule} from '@angular/material/menu';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {ActivePodcastComponent} from './music-panel/active-podcast/active-podcast.component';
-import {ProgressBarComponent} from './music-panel/progress-bar/progress-bar.component';
 import {PanelButtonsComponent} from './music-panel/panel-buttons/panel-buttons.component';
 import {VolumeBarComponent} from './music-panel/volume-bar/volume-bar.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -50,7 +49,8 @@ import {SharedModule} from "../shared/shared.module";
 
 
   ],
-  exports: [SidenavComponent, HeaderComponent, MusicPanelComponent],
+  exports: [SidenavComponent, HeaderComponent, MusicPanelComponent, PanelButtonsComponent],
+  providers: [PanelButtonsComponent],
   declarations: [SidenavComponent, HeaderComponent, MusicPanelComponent, ActivePodcastComponent, PanelButtonsComponent, VolumeBarComponent]
 })
 export class CoreModule {

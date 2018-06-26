@@ -3,6 +3,7 @@ import {AfterViewChecked, Component, DoCheck, OnInit} from '@angular/core';
 import {UserPlaylistsService} from "../services/user-playlists.service";
 import {ActivatedRoute} from "@angular/router";
 import {forEach} from "@angular/router/src/utils/collection";
+import {PanelButtonsComponent} from "../../core/music-panel/panel-buttons/panel-buttons.component";
 
 
 @Component({
@@ -18,6 +19,7 @@ export class SinglePlaylistComponent implements OnInit {
   podcast: Array<playlistTracks>;
 
   constructor(private userPlaylistsService: UserPlaylistsService,
+              private panelButtonsComponent: PanelButtonsComponent,
               private route: ActivatedRoute) {
   }
 
@@ -32,15 +34,14 @@ export class SinglePlaylistComponent implements OnInit {
     localStorage.removeItem('playlistId');
     localStorage.setItem('playlistId', JSON.stringify({playlistId: this.route.snapshot.paramMap.get('playlistId'), id: id}));
 
+    // this.panelButtonsComponent.loadTracksList();
+
   }
 
 
   loadPlaylist() {
 
     const id = this.route.snapshot.paramMap.get('playlistId');
-
-    console.log("id z routa ", id);
-
 
     this.userPlaylistsService.loadSinglePlaylist(id).subscribe(singlePlaylist => {
       this.singlePlaylist = singlePlaylist;

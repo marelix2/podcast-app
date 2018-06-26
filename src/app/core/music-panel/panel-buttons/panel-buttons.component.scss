@@ -1,3 +1,18 @@
 .padding-buttons{
-  padding: 1% 0;
+  padding-top: 0.7vh;
+}
+
+.progress{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress mat-progress-bar{
+  width: 50vw;
+}
+
+.progress p {
+  max-width: 2vw;
 }
