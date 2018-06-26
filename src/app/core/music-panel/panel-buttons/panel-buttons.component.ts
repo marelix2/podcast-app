@@ -64,7 +64,6 @@ export class PanelButtonsComponent implements OnInit {
     });
 
     this.audio.src = this.searchForTrack(this.playlistId.id, this.podcast);
-    console.log("---------------------");
     this.audio.load();
   }
 
@@ -87,7 +86,6 @@ export class PanelButtonsComponent implements OnInit {
 
     }
 
-
   }
 
   stopTrack() {
@@ -96,13 +94,6 @@ export class PanelButtonsComponent implements OnInit {
     this.isTrackPlayed = false;
   }
 
-
-  getSingleTrack() {
-    console.log("pokazuje", this.playlistId.id, this.podcast);
-    console.log("zwracam ", this.searchForTrack(this.playlistId.id, this.podcast));
-
-    return this.searchForTrack(this.playlistId.id, this.podcast);
-  }
 
   searchForTrack(nameKey, myArray) {
     for (const i of myArray) {

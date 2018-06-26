@@ -5,7 +5,6 @@
 .progress{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -14,5 +13,6 @@
 }
 
 .progress p {
+  padding:  0 3vw;
   max-width: 2vw;
 }
