@@ -4,46 +4,46 @@
        fxLayout="row"
        fxLayout.xs="column"
        fxLayoutGap="2%"
-  fxFlex="98">
+       fxFlex="98">
 
-  <mat-icon>search</mat-icon>
+    <mat-icon>search</mat-icon>
 
-  <mat-form-field>
-    <input  type="text" matInput formControlName='search' placeholder="search" [matAutocomplete]="auto">
-  </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput formControlName='search' placeholder="search" aria-label="Number"
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let n of treackAuto" [value]="n">
+          {{ n }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
 
-  <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let n of podcasts" [value]="n.name">
-      {{ n?.name }}
-    </mat-option>
-  </mat-autocomplete>
 
 
 
-<div  fxLayoutAlign="end"  fxFlex >
+    <div fxLayoutAlign="end" fxFlex>
 
-  <div class="user">
-      {{user?.email | username}}
+      <div class="user">
+        {{user?.email | username}}
+      </div>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span>Opcje</span>
+        </button>
+        <button mat-menu-item>
+          <span>Konto</span>
+        </button>
+        <button mat-menu-item>
+          <span (click)="logout()">Wyloguj</span>
+        </button>
+      </mat-menu>
+    </div>
   </div>
-
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>keyboard_arrow_down</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <span>Opcje</span>
-      </button>
-      <button mat-menu-item >
-        <span>Konto</span>
-      </button>
-      <button mat-menu-item>
-        <span (click)="logout()">Wyloguj</span>
-      </button>
-    </mat-menu>
-</div>
-  </div>
-
-
 
 
 </div>
