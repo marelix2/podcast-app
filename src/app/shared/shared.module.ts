@@ -19,6 +19,7 @@ import {UsernamePipe} from './pipes/username.pipe';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {SinglePlaylistComponent} from './single-playlist/single-playlist.component';
 import {SecondsPipePipe} from './pipes/seconds-pipe.pipe';
+import { AddTrackToPlaylistComponent } from './Dialog/add-track-to-playlist/add-track-to-playlist.component';
 
 @NgModule({
   imports: [
@@ -35,9 +36,9 @@ import {SecondsPipePipe} from './pipes/seconds-pipe.pipe';
     FlexLayoutModule,
     ReactiveFormsModule
   ],
-  entryComponents: [SidenavComponent, AddPlaylistComponent],
+  entryComponents: [SidenavComponent, AddPlaylistComponent, AddTrackToPlaylistComponent],
   exports: [UsernamePipe, SecondsPipePipe, AddPlaylistComponent],
-  declarations: [AddPlaylistComponent, UsernamePipe, SinglePlaylistComponent, SecondsPipePipe, AddPlaylistComponent]
+  declarations: [AddPlaylistComponent, UsernamePipe, SinglePlaylistComponent, SecondsPipePipe, AddPlaylistComponent, AddTrackToPlaylistComponent]
 })
 export class SharedModule {
 }

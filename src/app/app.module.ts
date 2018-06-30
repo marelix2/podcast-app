@@ -24,9 +24,9 @@ import {AuthGuard} from "./shared/guards/auth.guard";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {SharedModule} from "./shared/shared.module";
 import {UserPlaylistsService} from "./shared/services/user-playlists.service";
-import {AddPlaylistComponent} from "./shared/Dialog/add-playlist/add-playlist.component";
 import {DisplayPodcastService} from "./shared/services/display-podcast.service";
 import {AddPlaylistService} from "./shared/services/add-playlist.service";
+import {FillPlaylistService} from "./shared/services/fill-playlist.service";
 
 
 
@@ -65,7 +65,8 @@ import {AddPlaylistService} from "./shared/services/add-playlist.service";
     AuthGuard,
     UserPlaylistsService,
     DisplayPodcastService,
-    AddPlaylistService
+    AddPlaylistService,
+    FillPlaylistService
   ],
   bootstrap: [AppComponent]
 })

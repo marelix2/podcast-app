@@ -5,7 +5,7 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} 
 export class AddPlaylistService {
 
   playlistCollcetion: AngularFirestoreCollection<UserPlaylistModel>
-  playlistDocument : AngularFirestoreDocument<UserPlaylistModel>
+  playlistDocument: AngularFirestoreDocument<UserPlaylistModel>
 
   constructor(private afs: AngularFirestore) {
     this.playlistCollcetion = this.afs.collection('userPlaylist');
@@ -13,8 +13,5 @@ export class AddPlaylistService {
 
 
   addPlaylist(playlist: UserPlaylistModel) {
-    this.playlistCollcetion.add(playlist).then( r =>{
+    this.playlistCollcetion.add(playlist);
   }
-
-
-}

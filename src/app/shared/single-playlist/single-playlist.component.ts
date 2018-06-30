@@ -4,6 +4,8 @@ import {UserPlaylistsService} from "../services/user-playlists.service";
 import {ActivatedRoute} from "@angular/router";
 import {forEach} from "@angular/router/src/utils/collection";
 import {PanelButtonsComponent} from "../../core/music-panel/panel-buttons/panel-buttons.component";
+import {MatDialog} from "@angular/material";
+import {AddPlaylistComponent} from "../Dialog/add-playlist/add-playlist.component";
 
 
 @Component({
@@ -28,6 +30,8 @@ export class SinglePlaylistComponent implements OnInit {
     this.podcast = new Array<playlistTracks>();
     this.loadPlaylist();
   }
+
+
 
   savePlaylistId(id: string) {
 
