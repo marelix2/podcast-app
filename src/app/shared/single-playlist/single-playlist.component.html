@@ -1,5 +1,5 @@
 <div class="container">
-<table>
+<table *ngIf=" podcast.length > 0; else noTracks">
   <thead>
   <tr>
 
@@ -20,6 +20,10 @@
   </tbody>
 
 </table>
+
+  <ng-template #noTracks>
+    <p> Brak utworów</p>
+  </ng-template>
 
 </div>
 

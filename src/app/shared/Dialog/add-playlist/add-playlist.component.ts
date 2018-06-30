@@ -1,5 +1,8 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {MatDialogRef} from "@angular/material";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AddPlaylistService} from "../../services/add-playlist.service";
+import {LoginService} from "../../services/login.service";
 
 @Component({
   selector: 'app-add-playlist',
@@ -12,9 +15,16 @@ export class AddPlaylistComponent implements OnInit {
 
   @ViewChild('inputFile') nativeInputFile: ElementRef;
 
-  constructor(private dialogRef: MatDialogRef<AddPlaylistComponent>) { }
+  addPlaylistForm: FormGroup;
+
+  constructor(private dialogRef: MatDialogRef<AddPlaylistComponent>,
+              private formBuilder: FormBuilder,
+              private addPlaylistService: AddPlaylistService,
+              private loginService: LoginService) {
+  }
 
   ngOnInit() {
+    this.addPlaylistForm = this.addPlaylistFormBuild();
   }
 
   onNoClick() {
@@ -27,9 +37,25 @@ export class AddPlaylistComponent implements OnInit {
     console.log(this._files);
   }
 
-  selectFile(){
+  selectFile() {
     this.nativeInputFile.nativeElement.click();
 
+  }
+
+  addPlaylistFormBuild(): FormGroup {
+
+    return this.formBuilder.group({
+      playlistTitle: ['', Validators.required],
+      img: [''],
+      tracks: [[]],
+      uid:[this.loginService.userUid ],
+      description: ['']
+
+    });
+  }
+
+  onSubmit() {
+    this.addPlaylistService.addPlaylist(this.addPlaylistForm.getRawValue());
   }
 
 }

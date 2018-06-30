@@ -26,6 +26,7 @@ import {SharedModule} from "./shared/shared.module";
 import {UserPlaylistsService} from "./shared/services/user-playlists.service";
 import {AddPlaylistComponent} from "./shared/Dialog/add-playlist/add-playlist.component";
 import {DisplayPodcastService} from "./shared/services/display-podcast.service";
+import {AddPlaylistService} from "./shared/services/add-playlist.service";
 
 
 
@@ -63,7 +64,8 @@ import {DisplayPodcastService} from "./shared/services/display-podcast.service";
     LayoutService,
     AuthGuard,
     UserPlaylistsService,
-    DisplayPodcastService
+    DisplayPodcastService,
+    AddPlaylistService
   ],
   bootstrap: [AppComponent]
 })
